@@ -1,0 +1,98 @@
+@startuml
+
+!theme drew from https://raw.githubusercontent.com/drewmrobson/plantuml/main/themes
+
+' See https://plantuml.com/sequence-diagram
+
+autonumber
+
+' Header
+center header
+Arinco Integration Done Right
+endheader
+title 
+Proxy Pattern 
+This is hosted by <img:sourceforge.jpg>
+end title
+
+box "3rd Party"
+ participant Client AS C1 order 1
+end box
+
+box "Azure API Management"
+ participant C2 order 2 [
+=API
+----
+""Subtitle""
+] 
+end box
+
+box "3rd Party"
+ participant Service AS C3 <<1>> order 3
+end box
+
+
+
+alt "Fail"
+ C1 -> C2
+else "Maybe"
+ 
+ group "Mine"
+  loop "1000 times"
+   C1 -> C2
+  end
+ end
+
+
+end
+
+opt
+ C1 -> C2
+end
+
+par
+ C1 -> C2
+end
+
+break
+ C1 -> C2
+end
+
+critical
+ C1 -> C2
+end
+
+== Initialization ==
+
+C1 -> C2 : HTTP Request
+activate C1
+activate C2
+
+note right of C1
+:)
+end note
+
+C2 -> C3 : Forward Request
+activate C3
+
+note right of C2
+:)
+end note
+
+...5 minutes later...
+
+C3 -> C2 : Result
+deactivate C3
+C2 -> C1 : Result
+deactivate C2
+deactivate C1
+
+A ->] : << createRequest >>
+
+' Footer
+center footer
+By Drew Robson
+endfooter
+caption Integration Design
+
+@enduml

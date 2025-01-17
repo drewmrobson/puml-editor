@@ -27,3 +27,23 @@ Found an issue with [puml.dev](https://puml.dev)? Report it [here](https://githu
 Utilizing a simple and intuitive language, users can effortlessly draft various types of diagrams. For a detailed exploration of the language's capabilities and syntax, please refer to the PlantUML Language Reference Guide.
 
 From [https://plantuml.com/](https://plantuml.com/)
+
+## Examples
+
+See `examples` folder for `.puml` files of common UML diagrams.
+
+## Themes
+
+See `themes` folder for `.puml` files of themes which can be applied as follows in your PlantUML diagram.
+
+```plantuml
+' How to use themes at https://plantuml.com/theme
+' More themes at https://github.com/drewmrobson/puml-editor/tree/main/themes
+!theme vibrant
+```
+
+## Further Reading
+
+- [UML Diagrams](https://www.uml-diagrams.org/)
+- [PlantUML](https://plantuml.com/)
+- [puml.dev](https://www.puml.dev/)
